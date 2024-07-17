@@ -78,6 +78,9 @@
       font-size: 16px;
       border-radius: $border-radius;
       width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
 
       &.correct {
         background-color: $green;
@@ -103,14 +106,18 @@
     text-align: center;
     color: $white;
     letter-spacing: $letter-spacing;
-    opacity: 0.8;
+    opacity: 0.6;
+    border: none;
+    outline: none;
+    cursor: not-allowed;
 
     &.clicked {
       opacity: initial;
-    }
-
-    &:hover {
       cursor: pointer;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

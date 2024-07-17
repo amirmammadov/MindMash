@@ -1,7 +1,19 @@
 import s from "../../sass/components/_button.module.scss";
 
-const Button = ({ text }: { text: string }) => {
-  return <div className={s.startBtn}>{text}</div>;
+import { useGlobalContext } from "../../hooks/useGlobalContext";
+
+interface IButton {
+  text: string;
+}
+
+const Button = ({ text }: IButton) => {
+  const { handleStart } = useGlobalContext();
+
+  return (
+    <button className={s.startBtn} onClick={handleStart}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;
