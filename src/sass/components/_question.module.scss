@@ -1,0 +1,86 @@
+@import "../index.module.scss";
+
+.question {
+  background-color: $gray;
+  border: 1px solid $gray2;
+  border-radius: $border-radius;
+  padding: 25px;
+  width: 55%;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $align: flex-start,
+    $gap: 20px
+  );
+
+  .header {
+    @include flexbox($justify: space-between, $align: center);
+    width: 100%;
+    margin-bottom: 5px;
+
+    .title {
+      color: $white;
+      letter-spacing: $letter-spacing;
+      font-size: 22px;
+    }
+
+    .count {
+      color: $green2;
+      font-size: 20px;
+      font-weight: $font-weight;
+    }
+  }
+
+  .answers {
+    @include flexbox(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start,
+      $gap: 15px
+    );
+    width: 100%;
+
+    .answerItem {
+      background-color: $dark;
+      padding: 12px 15px;
+      color: $white;
+      letter-spacing: $letter-spacing;
+      font-size: 16px;
+      border-radius: $border-radius;
+      width: 100%;
+
+      &.correct {
+        background-color: $green;
+      }
+
+      &.wrong {
+        background-color: $red;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .nextBtn {
+    padding: 12px 15px;
+    background-color: $blue;
+    border-radius: $border-radius;
+    width: 100%;
+    font-size: 16px;
+    font-family: $font-weight;
+    text-align: center;
+    color: $white;
+    letter-spacing: $letter-spacing;
+    opacity: 0.8;
+
+    &.clicked {
+      opacity: initial;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../index.module.scss";
+
+.result {
+  width: 40%;
+  padding: 40px;
+  border-radius: $border-radius;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $align: center,
+    $gap: 20px
+  );
+
+  &.passed {
+    background-color: $green;
+  }
+
+  &.failed {
+    background-color: $red;
+  }
+
+  .text {
+    color: $white;
+    font-size: 32px;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+  }
+
+  .score {
+    color: $white;
+    font-size: 24px;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+  }
+}

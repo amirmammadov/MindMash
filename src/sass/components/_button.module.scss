@@ -1,0 +1,18 @@
+@import "../index.module.scss";
+
+.startBtn {
+  padding: 8px 15px;
+  letter-spacing: $letter-spacing;
+  font-size: 18px;
+  color: $dark;
+  font-weight: 500;
+  border-radius: $border-radius;
+  border: none;
+  outline: none;
+  background-color: $white;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
