@@ -2,9 +2,13 @@ import { useState } from "react";
 
 import s from "../../sass/components/_question.module.scss";
 
+import AnswerItem from "../AnswerItem/AnswerItem";
+
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 
 import { questions } from "../../data/questions";
+
+const QUES_SIZE = questions.length;
 
 const Question = () => {
   const [count, setCount] = useState(0);
@@ -19,7 +23,7 @@ const Question = () => {
       return;
     }
 
-    if (count === 9) {
+    if (count === QUES_SIZE - 1) {
       handleFinish();
       return;
     }
@@ -39,18 +43,14 @@ const Question = () => {
         <div className={s.count}>{`${count + 1}/${10}`}</div>
       </div>
       <div className={s.answers}>
-        {/* <div className={`${s.answerItem} ${s.correct}`}>React</div>
-        <div className={`${s.answerItem} ${s.wrong}`}>React.Js</div>
-        <div className={s.answerItem}>ReactJS</div>
-        <div className={s.answerItem}>All of the above</div> */}
         {answers.map((answer) => (
-          <button
+          <AnswerItem
             key={answer.title}
-            className={s.answerItem}
-            onClick={handleAnswer}
-          >
-            {answer.title}
-          </button>
+            title={answer.title}
+            isCorrect={answer.isCorrect}
+            selected={selected}
+            handleAnswer={handleAnswer}
+          />
         ))}
       </div>
       <button
