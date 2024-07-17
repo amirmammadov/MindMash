@@ -7,7 +7,7 @@ const Question = () => {
         <div className={s.title}>
           Which of the following is the correct name of React.js?
         </div>
-        <div className={s.count}>1 / 10</div>
+        <div className={s.count}>{`${1}/${10}`}</div>
       </div>
       <div className={s.answers}>
         <div className={`${s.answerItem} ${s.correct}`}>React</div>

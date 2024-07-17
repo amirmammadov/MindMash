@@ -13,21 +13,51 @@
     $gap: 20px
   );
 
+  @include large-screen {
+    width: 65%;
+  }
+
+  @include desktop {
+    width: 80%;
+  }
+
+  @include tablet {
+    width: 90%;
+  }
+
+  @include mobile {
+    width: 95%;
+  }
+
   .header {
-    @include flexbox($justify: space-between, $align: center);
+    @include flexbox($justify: space-between, $align: center, $gap: 10px);
     width: 100%;
     margin-bottom: 5px;
+
+    @include small-screen {
+      flex-direction: column-reverse;
+    }
 
     .title {
       color: $white;
       letter-spacing: $letter-spacing;
       font-size: 22px;
+      line-height: 25px;
+
+      @include desktop {
+        font-size: 20px;
+      }
+
+      @include small-screen {
+        text-align: center;
+      }
     }
 
     .count {
       color: $green2;
       font-size: 20px;
       font-weight: $font-weight;
+      word-break: keep-all;
     }
   }
 

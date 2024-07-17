@@ -11,6 +11,24 @@
     $gap: 20px
   );
 
+  @include large-screen {
+    width: 65%;
+  }
+
+  @include desktop {
+    width: 80%;
+  }
+
+  @include tablet {
+    width: 90%;
+  }
+
+  @include mobile {
+    width: 95%;
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
   &.passed {
     background-color: $green;
   }
@@ -24,6 +42,11 @@
     font-size: 32px;
     letter-spacing: $letter-spacing;
     font-weight: $font-weight;
+    text-align: center;
+
+    @include small-screen {
+      font-size: 24px;
+    }
   }
 
   .score {
@@ -31,5 +54,10 @@
     font-size: 24px;
     letter-spacing: $letter-spacing;
     font-weight: $font-weight;
+    text-align: center;
+
+    @include small-screen {
+      font-size: 18px;
+    }
   }
 }
