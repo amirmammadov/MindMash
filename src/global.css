@@ -1,0 +1,17 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #212529;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

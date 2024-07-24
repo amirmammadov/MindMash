@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { GlobalContextProvider } from "./context/GlobalContextProvider.tsx";
 
 import "./sass/style.module.scss";
+import "./global.css";
 
 import App from "./App.tsx";
 
