@@ -30,7 +30,7 @@
   }
 
   .header {
-    @include flexbox($justify: space-between, $align: center, $gap: 10px);
+    @include flexbox($justify: space-between, $align: flex-start, $gap: 10px);
     width: 100%;
     margin-bottom: 5px;
 

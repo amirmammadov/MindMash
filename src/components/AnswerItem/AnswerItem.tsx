@@ -17,7 +17,11 @@ const AnswerItem = ({
 }: IAnswerItem) => {
   const [wrongAnswerClicked, setWrongAnswerClicked] = useState(false);
 
-  const handleAnsweClick = () => {
+  const handleAnswerClick = () => {
+    if (selected) {
+      return;
+    }
+
     if (!isCorrect) {
       setWrongAnswerClicked(true);
     }
@@ -29,7 +33,7 @@ const AnswerItem = ({
       className={`${s.answerItem} ${selected && isCorrect && s.correct} ${
         wrongAnswerClicked && s.wrong
       }`}
-      onClick={handleAnsweClick}
+      onClick={handleAnswerClick}
     >
       {title}
     </button>
