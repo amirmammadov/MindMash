@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import s from "../../sass/components/_answer.module.scss";
 
+import { useGlobalContext } from "../../hooks/useGlobalContext";
+
 interface IAnswerItem {
   title: string;
   isCorrect: boolean;
@@ -17,6 +19,8 @@ const AnswerItem = ({
 }: IAnswerItem) => {
   const [wrongAnswerClicked, setWrongAnswerClicked] = useState(false);
 
+  const { increaseCount } = useGlobalContext();
+
   const handleAnswerClick = () => {
     if (selected) {
       return;
@@ -24,7 +28,10 @@ const AnswerItem = ({
 
     if (!isCorrect) {
       setWrongAnswerClicked(true);
+    } else {
+      increaseCount();
     }
+
     handleAnswer();
   };
 
