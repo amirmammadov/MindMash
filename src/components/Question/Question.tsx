@@ -6,6 +6,8 @@ import AnswerItem from "../AnswerItem/AnswerItem";
 
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 
+import { QUES_NUMBER } from "../../constants";
+
 import { questions } from "../../data/questions";
 
 const QUES_SIZE = questions.length;
@@ -40,7 +42,7 @@ const Question = () => {
     <div className={s.question}>
       <div className={s.header}>
         <div className={s.title}>{question}</div>
-        <div className={s.count}>{`${count + 1}/${10}`}</div>
+        <div className={s.count}>{`${count + 1}/${QUES_NUMBER}`}</div>
       </div>
       <div className={s.answers}>
         {answers.map((answer) => (
